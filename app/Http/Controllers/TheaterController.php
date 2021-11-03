@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Theater;
 use Illuminate\Http\Request;
+use Illuminate\Routing\Controller;
+use phpDocumentor\Reflection\Types\This;
 
 class TheaterController extends Controller
 {
@@ -13,7 +16,9 @@ class TheaterController extends Controller
      */
     public function index()
     {
-        //
+        $theaters = Theater::all();
+        Theater::all();
+        return view('theater', compact('theaters'));
     }
 
     /**
@@ -23,7 +28,7 @@ class TheaterController extends Controller
      */
     public function create()
     {
-        //
+        return view('createTheater');
     }
 
     /**
@@ -34,7 +39,9 @@ class TheaterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // dd($request->all());
+        Theater::create($request->all());
+        return redirect('/theater');
     }
 
     /**
@@ -79,6 +86,8 @@ class TheaterController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $theater = Theater::findOrFail($id);
+        $theater->delete();
+        return redirect(route('theater.index'));
     }
 }

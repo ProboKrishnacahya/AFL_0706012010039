@@ -40,7 +40,7 @@
         <nav class="navbar navbar-expand-md bg-black user-select-none">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{ url('assets/img/logo.png') }}" alt="Logo" class="pe-2"><strong>YukNonton</strong>
+                    <img src="{{ url('assets/img/logo.png') }}" alt="Logo" class="nav-logo pe-3"><strong>YukNonton</strong>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -57,7 +57,7 @@
                             <a class="nav-link {{ $active_theater ?? '' }}" href="/theater">Theater</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ $active_nowplaying ?? '' }}" href="/now-playing">Now Playing</a>
+                            <a class="nav-link me-0 {{ $active_now_playing ?? '' }}" href="/now-playing">Now Playing</a>
                         </li>
                     </ul>
                 </div>
@@ -65,7 +65,7 @@
         </nav>
 
         {{-- Content --}}
-        <main class="py-3">
+        <main class="my-5">
             @yield('content')
         </main>
 

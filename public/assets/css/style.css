@@ -53,6 +53,7 @@ a:hover,
 }
 
 .nav-link {
+    margin-right: .75rem;
     color: var(--dark-red);
 }
 
@@ -65,9 +66,14 @@ button:active {
     transform: scale(0.75);
 }
 
-img {
+.nav-logo {
     max-width: 50%;
     max-height: 2rem;
+}
+
+.content-img {
+    max-width: 50%;
+    max-height: 20rem;
 }
 
 ::selection {
