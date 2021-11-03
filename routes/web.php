@@ -13,6 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+//* Home
+// Route::get('/', [HomeController::class, 'home']);
 Route::get('/', function () {
-    return view('welcome');
+    return view(
+        'home',
+        [
+            "active_home" => "active",
+            "active_theater" => "",
+            "active_nowplaying" => ""
+        ]
+    );
 });
+
+//* Theater
+Route::resource('theater', TheaterController::class);
+
+//* Now Playing Movie
+Route::resource('nowplaying', NowPlayingController::class);
