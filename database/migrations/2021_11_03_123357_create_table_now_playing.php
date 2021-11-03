@@ -18,7 +18,11 @@ class CreateTableNowPlaying extends Migration
             $table->date('tanggal');
             $table->string('jam');
             $table->integer('durasi');
-            $table->string('nama_film');
+            $table->string('judul');
+            $table->string('poster');
+            $table->string('genre');
+            $table->string('deskripsi');
+            $table->string('cast');
             $table->integer('fk_theater')->foreign('fk_theater')->references('id')->on('theater');
             $table->timestamps();
         });

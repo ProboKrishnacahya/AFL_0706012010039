@@ -27,12 +27,7 @@ Route::resource('theater', TheaterController::class);
 //* Now Playing Movie
 Route::resource('nowplaying', NowPlayingController::class);
 
-// Route::get('', function () {
-//     $nowplaying = new NowPlaying();
-//     $nowplaying->tanggal = Carbon::now();
-//     $nowplaying->jam = '15:00';
-//     $nowplaying->durasi = 120;
-//     $nowplaying->nama_film = '100';
-//     $nowplaying->fk_theater = 1;
-//     $nowplaying->save();
-// });
+Route::get('test', function () {
+    $theater = Theater::factory()->create();
+    dd($theater);
+});

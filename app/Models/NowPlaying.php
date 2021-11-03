@@ -14,7 +14,7 @@ class NowPlaying extends Model
 
     protected $table = 'now_playing';
     protected $fillable = [
-        'tanggal', 'jam', 'durasi', 'nama_film', 'fk_theater'
+        'tanggal', 'jam', 'durasi', 'judul', 'fk_theater'
     ];
 
     public function Theater()

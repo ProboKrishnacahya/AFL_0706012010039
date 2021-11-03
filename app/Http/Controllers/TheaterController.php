@@ -52,7 +52,8 @@ class TheaterController extends Controller
      */
     public function show($id)
     {
-        //
+        $theater = Theater::find($id);
+        return view('showTheater', compact('theater'));
     }
 
     /**
@@ -63,7 +64,8 @@ class TheaterController extends Controller
      */
     public function edit($id)
     {
-        //
+        $theater = Theater::find($id);
+        return view('editTheater', compact('theater'));
     }
 
     /**
@@ -75,7 +77,9 @@ class TheaterController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $theater = Theater::find($id);
+        $theater->update($request->all());
+        return redirect('/theater');
     }
 
     /**

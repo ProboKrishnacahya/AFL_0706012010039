@@ -17,7 +17,7 @@ class Theater extends Model
         'nomor', 'tipe', 'kapasitas'
     ];
 
-    public function NowPlayings()
+    public function nowPlayings()
     {
         return $this->hasMany('App\Models\NowPlaying', 'id_now_playing', 'id_theater');
     }
