@@ -7,16 +7,15 @@
 @section('content')
 
     <div class="container">
-        <div class="row justify-content-center text-white">
-            <h1>Detail Theater {{ $theater['id_theater'] }}</h1>
-            <p><b>Tipe: </b>{{ $theater['tipe'] }}</p>
-            <p><b>Kapasitas: </b>{{ $theater['kapasitas'] }}</p>
+        <div class="row justify-content-center">
+            <h1 class="mb-3">Detail Theater {{ $theater['nomor'] }}</h1>
+            <p><strong>Tipe: </strong>{{ $theater['tipe'] }}</p>
+            <p><strong>Kapasitas: </strong>{{ $theater['kapasitas'] }}</p>
 
-            <br>
-            <b>List Now Playing</b>
+            <h4 class="mt-5">List Now Playing</h4>
             <br>
 
-            <table class="table text-white">
+            <table class="table table-hover table-dark table-striped table-border border-light mt-3">
                 <thead>
                     <tr>
                         <th scope="col">No.</th>

@@ -10,15 +10,23 @@ use phpDocumentor\Reflection\Types\This;
 class TheaterController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
+        $active_home = "";
+        $active_theater = "active";
+        $active_now_playing = "";
+
         $theaters = Theater::all();
         Theater::all();
-        return view('theater', compact('theaters'));
+        return view('theater', compact(
+            'active_home',
+            'active_theater',
+            'active_now_playing', 'theaters'
+        ));
     }
 
     /**
@@ -28,6 +36,9 @@ class TheaterController extends Controller
      */
     public function create()
     {
+        $active_home = "";
+        $active_theater = "active";
+        $active_now_playing = "";
         return view('createTheater');
     }
 
@@ -52,6 +63,9 @@ class TheaterController extends Controller
      */
     public function show($id)
     {
+        $active_home = "";
+        $active_theater = "active";
+        $active_now_playing = "";
         $theater = Theater::find($id);
         return view('showTheater', compact('theater'));
     }

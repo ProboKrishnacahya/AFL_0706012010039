@@ -36,7 +36,7 @@
                         </div>
                     @endif
                     <div class="text-center">
-                        <button type="submit" class="btn btn-success">Submit</button>
+                        <button type="submit" class="btn btn-success"><i class="bi bi-check-lg"></i>&emsp;Submit</button>
                     </div>
                 </form>
             </div>
