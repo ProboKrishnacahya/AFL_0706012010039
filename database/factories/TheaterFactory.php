@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Theater;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class TheaterFactory extends Factory
@@ -11,9 +12,9 @@ class TheaterFactory extends Factory
     public function definition()
     {
         return [
-            // 'nomor'=>$this->faker->numberBetween(1,10),
-            // 'tipe'=>$this->faker->shuffle(array('Regular', 'Premiere')) ,
-            // 'kapasitas'=>$this->faker->numberBetween(50,100),
+            'nomor'=>$this->faker->numberBetween(1,10),
+            'tipe'=>$this->faker->shuffle(array('Regular', 'Premiere')) ,
+            'kapasitas'=>$this->faker->numberBetween(50,100),
         ];
     }
 }

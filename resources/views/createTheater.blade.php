@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center text-white">
             <h1>Create New Theater</h1>
 
             <!-- Content Row -->
@@ -36,7 +36,7 @@
                         </div>
                     @endif
                     <div class="text-center">
-                        <button type="submit" class="btn btn-success">Kirim</button>
+                        <button type="submit" class="btn btn-success">Submit</button>
                     </div>
                 </form>
             </div>

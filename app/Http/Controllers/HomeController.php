@@ -12,6 +12,6 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     public function home(){
-        return view('home', ['title' => 'Home', 'pagetitle' => 'Welcome to YukNonton']);
+        return view('home', ['title' => 'YukNonton', 'pagetitle' => 'Welcome to YukNonton']);
     }
 }
