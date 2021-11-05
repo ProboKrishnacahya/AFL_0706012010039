@@ -7,8 +7,8 @@
 @section('content')
 
     <div class="container">
-        <div class="row justify-content-center text-white">
-            <h1>@yield('pagetitle')</h1>
+        <div class="row justify-content-center">
+            <h1 class="text-center">@yield('pagetitle')</h1>
 
             <!-- Content Row -->
             <div class="card mt-3">

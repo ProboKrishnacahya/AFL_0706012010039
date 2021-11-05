@@ -8,9 +8,13 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <h1 class="mb-3">@yield('pagetitle') {{ $theater['nomor'] }}</h1>
-            <p><strong>Tipe: </strong>{{ $theater['tipe'] }}</p>
-            <p><strong>Kapasitas: </strong>{{ $theater['kapasitas'] }} penonton</p>
+            <h1 class="text-center mb-3">@yield('pagetitle') {{ $theater['nomor'] }}</h1>
+            <p>
+                <strong>Tipe: </strong>{{ $theater['tipe'] }}
+            </p>
+            <p>
+                <strong>Kapasitas: </strong>{{ $theater['kapasitas'] }} penonton
+            </p>
 
             <h4 class="mt-5">List Now Playing</h4>
             <br>
@@ -27,16 +31,16 @@
                 </thead>
                 <tbody>
                     @php $index = 1 @endphp
-                @foreach ($theater->nowPlayings as $nawpleying)
-                    <tr>
-                        <th scope="row">{{ $index }}</th>
-                        @php $index++ @endphp
-                        <td>{{ $nawpleying['tanggal'] }}</td>
-                        <td>{{ $nawpleying['jam'] }}</td>
-                        <td>{{ $nawpleying['durasi'] }}</td>
-                        <td>{{ $nawpleying['judul'] }}</td>
-                    </tr>
-                @endforeach
+                    @foreach ($theater->nowPlayings as $nawpleying)
+                        <tr>
+                            <th scope="row">{{ $index }}</th>
+                            @php $index++ @endphp
+                            <td>{{ $nawpleying['tanggal'] }}</td>
+                            <td>{{ $nawpleying['jam'] }}</td>
+                            <td>{{ $nawpleying['durasi'] }}</td>
+                            <td>{{ $nawpleying['judul'] }}</td>
+                        </tr>
+                    @endforeach
                 </tbody>
             </table>
         </div>

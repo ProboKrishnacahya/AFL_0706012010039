@@ -29,10 +29,11 @@ class TheaterController extends Controller
      */
     public function create()
     {
-        $active_home = "";
         $active_theater = "active";
-        $active_now_playing = "";
-        return view('createTheater');
+
+        return view('createTheater', compact(
+            'active_theater'
+        ));
     }
 
     /**
@@ -50,11 +51,13 @@ class TheaterController extends Controller
      */
     public function show($id)
     {
-        $active_home = "";
         $active_theater = "active";
-        $active_now_playing = "";
+
         $theater = Theater::find($id);
-        return view('showTheater', compact('theater'));
+        return view('showTheater', compact(
+            'theater',
+            'active_theater'
+        ));
     }
 
     /**
@@ -62,8 +65,13 @@ class TheaterController extends Controller
      */
     public function edit($id)
     {
+        $active_theater = "active";
+
         $theater = Theater::find($id);
-        return view('editTheater', compact('theater'));
+        return view('editTheater', compact(
+            'theater',
+            'active_theater'
+        ));
     }
 
     /**

@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="container">
-        <div class="row justify-content-center">
+        <div class="row text-center">
             <h1>@yield('pagetitle')</h1>
         </div>
 
@@ -18,13 +18,17 @@
         </div>
         <br>
 
-
         @foreach ($theaters as $titer)
             <div class="card mb-4">
                 <h3><i class="bi bi-camera-reels"></i>&emsp;Theater {{ $titer['nomor'] }}</h1>
                     <hr class="mb-4">
-                    <p><i class="bi bi-list-ul"></i>&emsp;<strong>Tipe: </strong>{{ $titer['tipe'] }}</p>
-                    <p><i class="bi bi-people-fill"></i>&emsp;<strong>Kapasitas: </strong>{{ $titer['kapasitas'] }} penonton</p>
+                    <p>
+                        <i class="bi bi-list-ul"></i>&emsp;<strong>Tipe: </strong>{{ $titer['tipe'] }}
+                    </p>
+                    <p>
+                        <i class="bi bi-people-fill"></i>&emsp;<strong>Kapasitas: </strong>{{ $titer['kapasitas'] }}
+                        penonton
+                    </p>
                     <div class="d-flex justify-content-center">
                         <form action="{{ route('theater.destroy', $titer->id_theater) }}" method="POST">
                             <a class="btn btn-info show" href="{{ route('theater.show', $titer->id_theater) }}">
