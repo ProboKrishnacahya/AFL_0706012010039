@@ -8,11 +8,11 @@
 
     <div class="container">
 
-        <div class="row mb-5">
+        <div class="row my-5 py-5">
             <div class="col-md-6">
                 <div>
                     <h1>@yield('pagetitle')</h1>
-                    <p class="text-muted mb-5">Nikmati sensasi menonton film terbaik di <strong>YukNonton</strong>.</p>
+                    <p class="text-white-50 mb-5">Nikmati sensasi menonton film terbaik di <strong>YukNonton</strong>.</p>
                     <br>
                     <a href="theater"><button class="btn btn-danger me-3">Theater</button></a>
                     <a href="now-playing"><button class="btn btn-outline-danger">Now Playing</button></a>
