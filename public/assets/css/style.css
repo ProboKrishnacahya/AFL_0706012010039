@@ -72,8 +72,8 @@ a:hover,
 }
 
 .active {
+    border-bottom: solid 2px var(--dark-red) !important;
     color: var(--light-red) !important;
-    border-bottom: 2px solid var(--dark-red) !important;
 }
 
 button:active,

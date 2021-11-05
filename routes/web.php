@@ -9,17 +9,7 @@ use App\Http\Controllers\TheaterController;
 use App\Http\Controllers\NowPlayingController;
 
 //* Home
-// Route::get('/', [HomeController::class, 'home']);
-Route::get('/', function () {
-    return view(
-        'home',
-        [
-            "active_home" => "active",
-            "active_theater" => "",
-            "active_now_playing" => ""
-        ]
-    );
-});
+Route::get('/', [HomeController::class, 'home']);
 
 //* Theater
 Route::resource('theater', TheaterController::class);
@@ -27,7 +17,7 @@ Route::resource('theater', TheaterController::class);
 //* Now Playing Movie
 Route::resource('nowplaying', NowPlayingController::class);
 
-Route::get('test', function () {
-    $theater = Theater::factory()->create();
-    dd($theater);
-});
+// Route::get('test', function () {
+//     $theater = Theater::factory()->create();
+//     dd($theater);
+// });
