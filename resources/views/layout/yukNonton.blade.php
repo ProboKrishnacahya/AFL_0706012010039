@@ -50,13 +50,10 @@
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link {{ $active_home ?? '' }}" href="/">Home</a>
+                        <a class="nav-link {{ $active_now_playing ?? '' }}" href="/now-playing">Now Playing</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ $active_theater ?? '' }}" href="/theater">Theater</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link me-0 {{ $active_now_playing ?? '' }}" href="/now-playing">Now Playing</a>
+                        <a class="nav-link me-0 {{ $active_theater ?? '' }}" href="/theater">Theater</a>
                     </li>
                 </ul>
             </div>
@@ -64,15 +61,15 @@
     </nav>
 
     {{-- Content --}}
-    <main class="my-5">
+    <main class="mt-5">
         @yield('content')
     </main>
 
     {{-- Footer --}}
-    {{-- <footer class="navbar bg-black fixed-bottom user-select-none">
+    <footer class="navbar bg-black fixed-bottom user-select-none">
         <div class="container">
             <div class="d-flex">
-                &copy; 2021<a href="/">&nbsp;<strong>YukNonton</strong></a>
+                &copy; 2021<a href="/">&nbsp;<span class="fw-bold">YukNonton</span></a>
             </div>
 
             <ul class="justify-content-end list-unstyled d-flex pt-2 mb-1">
@@ -81,7 +78,7 @@
                 <li class="ms-3"><a href="https://www.facebook.com/yuknonton"><i class="bi bi-facebook" style="font-size: 1.5rem;"></i></a></li>
             </ul>
         </div>
-    </footer> --}}
+    </footer>
 </body>
 
 </html>

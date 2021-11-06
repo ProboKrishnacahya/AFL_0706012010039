@@ -17,7 +17,7 @@ class TheaterController extends Controller
         $active_theater = "active";
 
         $theaters = Theater::all();
-        Theater::all();
+
         return view('theater', compact(
             'active_theater',
             'theaters'
@@ -42,8 +42,18 @@ class TheaterController extends Controller
     public function store(Request $request)
     {
         // dd($request->all());
+
+        //? Validasi agar Nomor Theater tidak bisa kembar
+        $validated = $request->validate([
+            'nomor_theater' => 'required | unique:theater,nomor_theater'
+        ]);
+        // $rule = [
+        //     'nomor_theater' => 'unique : theater, nomor_theater'
+        // ]; //'unique : nama table, nama kolom'
+        //$this->validate($request);
+
         Theater::create($request->all());
-        return redirect('/theater');
+        return redirect(route('theater.index'));
     }
 
     /**
@@ -53,10 +63,11 @@ class TheaterController extends Controller
     {
         $active_theater = "active";
 
-        $theater = Theater::find($id);
+        // $theater = Theater::find($id);
+        $theater = Theater::where('nomor_theater', $id)->first();
         return view('showTheater', compact(
-            'theater',
-            'active_theater'
+            'active_theater',
+            'theater'
         ));
     }
 
@@ -69,8 +80,8 @@ class TheaterController extends Controller
 
         $theater = Theater::find($id);
         return view('editTheater', compact(
-            'theater',
-            'active_theater'
+            'active_theater',
+            'theater'
         ));
     }
 
@@ -79,9 +90,9 @@ class TheaterController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $theater = Theater::find($id);
+        $theater = Theater::findOrFail($id);
         $theater->update($request->all());
-        return redirect('/theater');
+        return redirect(route('theater.index'));
     }
 
     /**

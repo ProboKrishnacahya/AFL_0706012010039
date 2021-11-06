@@ -14,8 +14,7 @@ class CreateTableTheater extends Migration
     public function up()
     {
         Schema::create('theater', function (Blueprint $table) {
-            $table->id('id_theater');
-            $table->string('nomor')->nullable(false);
+            $table->id('nomor_theater');
             $table->string('tipe')->nullable(false);
             $table->integer('kapasitas')->nullable(false);
             $table->timestamps();

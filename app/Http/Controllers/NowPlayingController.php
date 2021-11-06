@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\NowPlaying;
+use App\Models\Theater;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Str;
 
 class NowPlayingController extends Controller
 {
@@ -16,10 +18,12 @@ class NowPlayingController extends Controller
         $active_now_playing = "active";
 
         $now_playings = NowPlaying::all();
-        NowPlaying::all();
-        return view('now_playing', compact(
+        $theaters = Theater::all();
+
+        return view('nowPlaying', compact(
             'active_now_playing',
-            'now_playings'
+            'now_playings',
+            'theaters'
         ));
     }
 
@@ -30,8 +34,10 @@ class NowPlayingController extends Controller
     {
         $active_now_playing = "active";
 
+        $theaters = Theater::all();
         return view('createNowPlaying', compact(
-            'active_now_playing'
+            'active_now_playing',
+            'theaters'
         ));
     }
 
@@ -40,9 +46,21 @@ class NowPlayingController extends Controller
      */
     public function store(Request $request)
     {
+        $movie_code = Str::upper(Str::substr($request->judul, 0, 5));
+
         // dd($request->all());
-        NowPlaying::create($request->all());
-        return redirect('/now-playing');
+        NowPlaying::create([
+            'movie_code' => $movie_code,
+            'nomor_theater' => $request->nomor_theater,
+            'judul' => $request->judul,
+            'jam' => $request->jam,
+            'durasi' => $request->durasi,
+            'genre' => $request->genre,
+            'deskripsi' => $request->deskripsi,
+            'cast' => $request->cast
+            // 'poster' => $request->poster
+        ]);
+        return redirect(route('now-playing.index'));
     }
 
     /**
@@ -52,10 +70,10 @@ class NowPlayingController extends Controller
     {
         $active_now_playing = "active";
 
-        $now_playing = NowPlaying::find($id);
+        $now_playing = NowPlaying::where('id_now_playing', $id)->first();
         return view('showNowPlaying', compact(
-            'now_playing',
-            'active_now_playing'
+            'active_now_playing',
+            'now_playing'
         ));
     }
 
@@ -66,8 +84,10 @@ class NowPlayingController extends Controller
     {
         $active_now_playing = "active";
 
-        $now_playing = NowPlaying::find($id);
+        $now_playing = NowPlaying::findOrFail($id);
+        $theaters = Theater::all();
         return view('editNowPlaying', compact(
+            'theaters',
             'now_playing',
             'active_now_playing'
         ));
@@ -78,9 +98,21 @@ class NowPlayingController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $now_playing = NowPlaying::find($id);
-        $now_playing->update($request->all());
-        return redirect('/now-playing');
+        $movie_code = Str::upper(Str::substr($request->judul, 0, 5));
+
+        $now_playing = NowPlaying::findOrFail($id);
+        $now_playing->update([
+            'movie_code' => $movie_code,
+            'nomor_theater' => $request->nomor_theater,
+            'judul' => $request->judul,
+            'jam' => $request->jam,
+            'durasi' => $request->durasi,
+            'genre' => $request->genre,
+            'deskripsi' => $request->deskripsi,
+            'cast' => $request->cast
+            // 'poster' => $request->poster
+        ]);
+        return redirect(route('now-playing.index'));
     }
 
     /**
@@ -90,6 +122,6 @@ class NowPlayingController extends Controller
     {
         $now_playing = NowPlaying::findOrFail($id);
         $now_playing->delete();
-        return redirect(route('now_playing.index'));
+        return redirect(route('now-playing.index'));
     }
 }

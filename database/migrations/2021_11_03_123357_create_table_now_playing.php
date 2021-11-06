@@ -15,15 +15,16 @@ class CreateTableNowPlaying extends Migration
     {
         Schema::create('now_playing', function (Blueprint $table) {
             $table->id('id_now_playing');
-            $table->date('tanggal');
-            $table->string('jam');
-            $table->integer('durasi');
+            $table->string('movie_code')->nullable(true);
             $table->string('judul');
-            $table->string('poster');
-            $table->string('genre');
-            $table->string('deskripsi');
-            $table->string('cast');
-            $table->integer('fk_theater')->foreign('fk_theater')->references('id')->on('theater');
+            $table->string('jam')->nullable(false);
+            $table->integer('durasi')->nullable(false);
+            $table->string('genre')->nullable(false);
+            $table->string('deskripsi')->nullable(false);
+            $table->string('cast')->nullable(false);
+            // $table->string('poster');
+            $table->bigInteger('nomor_theater')->unsigned();
+            // $table->foreign('nomor_theater')->references('nomor_theater')->on('theater'); //?references('nama kolom dari id di Theater ')
             $table->timestamps();
         });
     }

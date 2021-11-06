@@ -14,11 +14,19 @@ class NowPlaying extends Model
 
     protected $table = 'now_playing';
     protected $fillable = [
-        'tanggal', 'jam', 'durasi', 'judul', 'fk_theater'
+        'movie_code',
+        'judul',
+        'nomor_theater',
+        'jam',
+        'durasi',
+        'genre',
+        'deskripsi',
+        'cast'
+        // 'poster'
     ];
 
-    public function Theater()
+    public function theater()
     {
-        return $this->belongsTo('App\Models\Theater', 'fk_theater', 'id_theater');
+        return $this->belongsTo('App\Models\Theater', 'nomor_theater', 'nomor_theater');
     }
 }

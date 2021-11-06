@@ -12,12 +12,12 @@
 
             <!-- Content Row -->
             <div class="card mt-3">
-                <form action="{{ route('theater.update', $theater->id_theater) }}" method="post">
-                    {{ csrf_field() }}
+                <form action="{{ route('theater.update', $theater->nomor_theater) }}" method="post">
+                    @csrf
                     <input type="hidden" name="_method" value="PATCH">
                     <div class="form-group">
                         <label>Nomor</label>
-                        <input type="number" class="form-control" name="nomor" value="{{ $theater->nomor }}" required>
+                        <input type="number" class="form-control" name="nomor_theater" value="{{ $theater->nomor_theater }}" required>
                     </div>
                     {{-- <div class="form-group">
                         <label>Tipe</label>

@@ -9,16 +9,18 @@ class Theater extends Model
 {
     use HasFactory;
 
-    protected $primaryKey = 'id_theater';
+    protected $primaryKey = 'nomor_theater';
     protected $keyType = 'integer';
 
     protected $table = 'theater';
     protected $fillable = [
-        'nomor', 'tipe', 'kapasitas'
+        'nomor_theater',
+        'tipe',
+        'kapasitas'
     ];
 
     public function nowPlayings()
     {
-        return $this->hasMany('App\Models\NowPlaying', 'id_now_playing', 'id_theater');
+        return $this->hasMany('App\Models\NowPlaying', 'nomor_theater', 'nomor_theater');
     }
 }

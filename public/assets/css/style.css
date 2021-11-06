@@ -1,15 +1,71 @@
-:root {
-    --dark-red: #DB0000;
-    --light-red: #FF0000;
-    --white: #FFFFFF;
-    --black: #000000;
-    --body: 'Manrope', sans-serif !important;
-}
+/*! DESKTOP VIEW */
 
+/** Page Structures */
 body {
     font-family: var(--body) !important;
 }
 
+main {
+    margin-bottom: 7.5rem;
+}
+
+/** Blade Components */
+h1,
+h2,
+h3 {
+    font-weight: 800 !important;
+}
+
+h4,
+h5,
+h6,
+strong,
+button,
+.nav-link {
+    font-weight: 600 !important;
+}
+
+img,
+a,
+.nav-link {
+    -webkit-user-drag: none;
+    user-select: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--dark-red);
+}
+
+th,
+.number {
+    text-align: center;
+}
+
+th,
+td {
+    border: 2px solid var(--white);
+}
+
+label {
+    margin-bottom: .5rem;
+}
+
+input {
+    caret-color: var(--dark-red);
+}
+
+select {
+    padding: .4rem;
+    border-radius: 5px;
+}
+
+hr {
+    height: 2px !important;
+    border-radius: 50px !important
+}
+
+/** Pseudo-elements */
 ::-webkit-scrollbar {
     height: 10px;
 }
@@ -33,46 +89,21 @@ body {
 }
 
 ::placeholder {
-    color: var(--white) !important;
+    color: var(--gray);
 }
 
-hr {
-    height: 2px !important;
-    border-radius: 50px !important
-}
-
-h1,
-h2,
-h3 {
-    font-weight: 800 !important;
-}
-
-h4,
-h5,
-h6,
-strong,
-button,
-.active {
-    font-weight: 600 !important;
-}
-
-a {
-    text-decoration: none;
-    color: var(--dark-red);
+/** Pseudo-classes */
+:root {
+    --dark-red: #DB0000;
+    --light-red: #FF0000;
+    --gray: #808080;
+    --black: #000000;
+    --white: #FFFFFF;
+    --body: 'Manrope', sans-serif !important;
 }
 
 a:hover,
 .nav-link:hover {
-    color: var(--light-red);
-}
-
-.nav-link {
-    margin-right: .75rem;
-    color: var(--dark-red) !important;
-}
-
-.active {
-    border-bottom: solid 2px var(--dark-red) !important;
     color: var(--light-red) !important;
 }
 
@@ -88,11 +119,6 @@ button:active,
     color: var(--dark-red) !important;
 }
 
-.btn-link {
-    text-decoration: none;
-    color: var(--dark-red);
-}
-
 .btn-link:hover {
     color: var(--light-red);
 }
@@ -105,11 +131,54 @@ button:active,
     outline: none !important;
 }
 
-img,
-a,
+input:focus,
+select:focus-visible,
+textarea:focus {
+    box-shadow: 0 0 0 3px var(--dark-red) !important;
+}
+
+.custom-radio:checked,
+.custom-radio:focus {
+    background-color: var(--dark-red);
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/** Classes */
+.active {
+    font-weight: 900 !important;
+    border-bottom: solid 2px var(--dark-red) !important;
+    color: var(--light-red) !important;
+}
+
 .nav-link {
-    -webkit-user-drag: none;
-    user-select: none;
+    margin-right: .75rem;
+    color: var(--dark-red) !important;
+}
+
+.btn-link {
+    text-decoration: none;
+    color: var(--dark-red);
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+select,
+.form-control {
+    background-color: var(--black) !important;
+    color: var(--white) !important;
+    border: none;
+    outline: none;
+}
+
+.card {
+    padding: 1.25rem;
+    border-radius: 10px !important;
+    border: solid 3px #FFFFFF25 !important;
+    background: #FFFFFF1A !important;
+    backdrop-filter: blur(3px) !important;
 }
 
 .nav-logo {
@@ -125,35 +194,6 @@ a,
 .jumbotron-img {
     width: 100%;
     height: 100%;
-    border-radius: .25rem;
+    border-radius: 5px;
     filter: contrast(90%) brightness(120%) saturate(135%);
-}
-
-.card {
-    padding: 1.25rem;
-    border-radius: .75rem !important;
-    border: solid 3px #FFFFFF25 !important;
-    background: #FFFFFF1A !important;
-    backdrop-filter: blur(3px) !important;
-}
-
-label {
-    margin-bottom: .5rem;
-}
-
-.form-group {
-    margin-bottom: 1rem;
-}
-
-.form-control,
-select {
-    background-color: var(--black) !important;
-    color: var(--white) !important;
-    border: none;
-    outline: none;
-}
-
-select {
-    padding: .4rem;
-    border-radius: .25rem;
 }

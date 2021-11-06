@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="container">
-        <div class="row text-center">
+        <div class="row justify-content-center">
             <h1>@yield('pagetitle')</h1>
         </div>
 
@@ -18,23 +18,23 @@
         </div>
         <br>
 
-        @foreach ($theaters as $titer)
+        @foreach ($theaters as $theater)
             <div class="card mb-4">
-                <h3><i class="bi bi-camera-reels"></i>&emsp;Theater {{ $titer['nomor'] }}</h1>
+                <h3><i class="bi bi-camera-reels"></i>&emsp;Theater {{ $theater['nomor_theater'] }}</h1>
                     <hr class="mb-4">
                     <p>
-                        <i class="bi bi-list-ul"></i>&emsp;<strong>Tipe: </strong>{{ $titer['tipe'] }}
+                        <i class="bi bi-list-ul"></i>&emsp;<strong>Tipe: </strong>{{ $theater['tipe'] }}
                     </p>
                     <p>
-                        <i class="bi bi-people-fill"></i>&emsp;<strong>Kapasitas: </strong>{{ $titer['kapasitas'] }}
+                        <i class="bi bi-people"></i>&emsp;<strong>Kapasitas: </strong>{{ $theater['kapasitas'] }}
                         penonton
                     </p>
                     <div class="d-flex justify-content-center">
-                        <form action="{{ route('theater.destroy', $titer->id_theater) }}" method="POST">
-                            <a class="btn btn-info show" href="{{ route('theater.show', $titer->id_theater) }}">
+                        <form action="{{ route('theater.destroy', $theater->nomor_theater) }}" method="POST">
+                            <a class="btn btn-info show" href="{{ route('theater.show', $theater->nomor_theater) }}">
                                 <i class="bi bi-box-arrow-up-right"></i>&emsp;<strong>Show</strong></a>&emsp;
                             <a class="btn btn-outline-warning edit"
-                                href="{{ route('theater.edit', $titer->id_theater) }}">
+                                href="{{ route('theater.edit', $theater->nomor_theater) }}">
                                 <i class="bi bi-pencil"></i>&emsp;<strong>Edit</strong></a>&nbsp;
                             @csrf
                             @method('DELETE')
