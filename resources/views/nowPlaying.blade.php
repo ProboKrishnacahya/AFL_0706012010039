@@ -7,15 +7,15 @@
 @section('content')
 
     <div class="container">
+
         <div class="row justify-content-center">
             <h1>@yield('pagetitle')</h1>
         </div>
 
-        <div class="input-group my-5">
-            <input type="text" class="form-control" placeholder="Search Movie Title" aria-label="Search Movie Title"
-                aria-describedby="button-addon2">
-            <button class="btn btn-danger" type="button" id="button-addon2">Search</button>
-        </div>
+        {{-- <div class="input-group my-5">
+            <input type="text" class="form-control" placeholder="Search Movie Title" name="search" value="{{ request('search') }}">
+            <button class="btn btn-danger" type="button">Search</button>
+        </div> --}}
 
         <div class="d-md-flex justify-content-md-end">
             <a class="btn btn-success my-2 create" href="{{ route('now-playing.create') }}">
@@ -44,7 +44,7 @@
                     </p>
                     <p>
                         <i class="bi bi-play-circle"></i>&emsp;<strong>Durasi: </strong>{{ $now_playing['durasi'] }}
-                        menit
+                        Menit
                     </p>
                     <div class="d-flex justify-content-center">
                         <form action="{{ route('now-playing.destroy', $now_playing->id_now_playing) }}" method="POST">

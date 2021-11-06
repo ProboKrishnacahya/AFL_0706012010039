@@ -47,10 +47,6 @@ class TheaterController extends Controller
         $validated = $request->validate([
             'nomor_theater' => 'required | unique:theater,nomor_theater'
         ]);
-        // $rule = [
-        //     'nomor_theater' => 'unique : theater, nomor_theater'
-        // ]; //'unique : nama table, nama kolom'
-        //$this->validate($request);
 
         Theater::create($request->all());
         return redirect(route('theater.index'));

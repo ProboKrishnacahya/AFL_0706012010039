@@ -7,6 +7,7 @@
 @section('content')
 
     <div class="container">
+
         <div class="row justify-content-center">
             <h1>@yield('pagetitle')</h1>
         </div>
@@ -27,7 +28,7 @@
                     </p>
                     <p>
                         <i class="bi bi-people"></i>&emsp;<strong>Kapasitas: </strong>{{ $theater['kapasitas'] }}
-                        penonton
+                        Penonton
                     </p>
                     <div class="d-flex justify-content-center">
                         <form action="{{ route('theater.destroy', $theater->nomor_theater) }}" method="POST">

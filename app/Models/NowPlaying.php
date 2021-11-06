@@ -29,4 +29,11 @@ class NowPlaying extends Model
     {
         return $this->belongsTo('App\Models\Theater', 'nomor_theater', 'nomor_theater');
     }
+
+    // public function scopeFilter($query, array $filters)
+    // {
+    //     if (isset($filters['search']) ? $filters['search'] : false) {
+    //         return $query->where('title', 'like', '%' . request('search') . '%');
+    //     }
+    // }
 }
