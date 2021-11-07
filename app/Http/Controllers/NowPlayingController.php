@@ -17,14 +17,17 @@ class NowPlayingController extends Controller
     {
         $active_now_playing = "active";
 
-        $now_playings = NowPlaying::all();
+        $now_playings = NowPlaying::latest()->filter(request(['search']))->paginate(3);
         $theaters = Theater::all();
 
-        return view('nowPlaying', compact(
-            'active_now_playing',
-            'now_playings',
-            'theaters'
-        ));
+        return view(
+            'nowPlaying',
+            ["active_now_playing" => "active"],
+            compact(
+                'now_playings',
+                'theaters'
+            )
+        );
     }
 
     /**
@@ -48,7 +51,6 @@ class NowPlayingController extends Controller
     {
         $movie_code = Str::upper(Str::substr($request->judul, 0, 5));
 
-        // dd($request->all());
         NowPlaying::create([
             'movie_code' => $movie_code,
             'nomor_theater' => $request->nomor_theater,
