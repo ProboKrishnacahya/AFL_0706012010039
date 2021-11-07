@@ -8,7 +8,7 @@
 
     <div class="container">
         <div class="card">
-            <h1 class="text-center mb-3">@yield('pagetitle') {{ $theater['nomor_theater'] }}</h1>
+            <h1 class="text-center mt-3">@yield('pagetitle') {{ $theater['nomor_theater'] }}</h1>
             <hr class="mb-4">
             <p>
                 <i class="bi bi-list-ul"></i>&emsp;<strong>Tipe: </strong>{{ $theater['tipe'] }}

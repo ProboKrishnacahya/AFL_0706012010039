@@ -13,7 +13,7 @@
                 <i class="bi bi-quote"></i>&emsp;<strong>Judul: </strong>{{ $now_playing['judul'] }}
             </p>
             <p><i class="bi bi-camera-reels"></i>&emsp;<strong>Theater: </strong>
-                <strong>
+                <strong class="fw-bold">
                     <a href="{{ route('theater.show', $now_playing->theater->nomor_theater) }}">
                         {{ $now_playing->theater->nomor_theater }}
                     </a>

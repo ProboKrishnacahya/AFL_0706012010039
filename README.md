@@ -1,3 +1,25 @@
+# AFL_0706012010039
+
+<samp>AFL Web Development 2021-2022 Gasal Semester 3 Informatika Universitas Ciputra.</samp>
+
+Oleh:
+<a href="https://s.id/cahyaa">Probo Krishnacahya</a> (0706012010039) <a href="https://github.com/cahyaa02">@cahyaa02</a>
+
+YukNonton adalah web application tentang jasa penayangan Film Bioskop (Now Playing Movie & Theater) menggunakan Laravel dan Bootstrap serta Model View Controller Pattern.
+
+<hr>
+
+Fitur-fitur:
+
+<li>Create, Read, Update, Delete Now Playing Movie</li>
+<li>Create, Read, Update, Delete Theater</li>
+
+<br>
+
+`One Now Playing Movie only belongs to one Theater showtime schedule. One Theater has many Now Playing Movie.`
+
+<hr>
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">

@@ -33,7 +33,7 @@
                     </p>
                     <p>
                         <i class="bi bi-camera-reels"></i>&emsp;<strong>Theater: </strong>
-                        <strong>
+                        <strong class="fw-bold">
                             <a href="{{ route('theater.show', $now_playing->theater->nomor_theater) }}">
                                 {{ $now_playing->theater->nomor_theater }}
                             </a>
