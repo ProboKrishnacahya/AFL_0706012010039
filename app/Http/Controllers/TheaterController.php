@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\Theater;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
-use phpDocumentor\Reflection\Types\This;
 
 class TheaterController extends Controller
 {
@@ -14,14 +13,15 @@ class TheaterController extends Controller
      */
     public function index()
     {
-        $active_theater = "active";
+        $theaters = Theater::latest()->filter(request(['search']))->paginate(3);
 
-        $theaters = Theater::all();
-
-        return view('theater', compact(
-            'active_theater',
-            'theaters'
-        ));
+        return view(
+            'theater',
+            ["active_theater" => "active"],
+            compact(
+                'theaters'
+            )
+        );
     }
 
     /**

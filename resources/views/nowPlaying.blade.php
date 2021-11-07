@@ -16,10 +16,9 @@
             <div class="input-group my-5">
                 <input type="text" class="form-control" placeholder="Search Movie Title" name="search"
                     value="{{ request('search') }}">
-                <button class="btn btn-danger" type="submit">Search</button>
+                <button class="btn btn-danger" type="submit"><i class="bi bi-search"></i></button>
             </div>
         </form>
-
 
         <div class="d-md-flex justify-content-md-end">
             <a class="btn btn-success my-2 create" href="{{ route('now-playing.create') }}">

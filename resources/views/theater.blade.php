@@ -12,6 +12,14 @@
             <h1>@yield('pagetitle')</h1>
         </div>
 
+        <form action="{{ route('theater.index') }}">
+            <div class="input-group my-5">
+                <input type="number" class="form-control" placeholder="Search Theater Number" name="search"
+                    value="{{ request('search') }}">
+                <button class="btn btn-danger" type="submit"><i class="bi bi-search"></i></button>
+            </div>
+        </form>
+
         <div class="d-md-flex justify-content-md-end">
             <a class="btn btn-success my-2 create" href="{{ route('theater.create') }}">
                 <i class="bi bi-plus-lg"></i>&emsp;<strong>Create</strong>
@@ -19,6 +27,7 @@
         </div>
         <br>
 
+        @if ($theaters->count())
         @foreach ($theaters as $theater)
             <div class="card mb-4">
                 <h3><i class="bi bi-camera-reels"></i>&emsp;Theater {{ $theater['nomor_theater'] }}</h1>
@@ -47,6 +56,14 @@
                     </div>
             </div>
         @endforeach
+
+        @else
+            <p class="text-center mt-5">Theater Number Not Found.</p>
+        @endif
+
+        <ul class="pagination justify-content-center mt-5">
+            {{ $theaters->links() }}
+        </ul>
 
     </div>
 

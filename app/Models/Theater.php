@@ -23,4 +23,11 @@ class Theater extends Model
     {
         return $this->hasMany('App\Models\NowPlaying', 'nomor_theater', 'nomor_theater');
     }
+
+    public function scopeFilter($query, array $filters)
+    {
+        $query->when($filters['search'] ?? false, function ($query, $search) {
+            return $query->where('nomor_theater', 'like', '%' . $search . '%');
+        });
+    }
 }

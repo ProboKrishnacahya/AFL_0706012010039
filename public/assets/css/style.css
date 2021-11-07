@@ -148,6 +148,10 @@ a:hover {
     color: var(--normal-red) !important;
 }
 
+.nav-logo:hover {
+    filter: brightness(120%);
+}
+
 button:active,
 .create:active,
 .show:active,
@@ -219,6 +223,10 @@ select:focus-visible {
 .btn-link {
     text-decoration: none;
     color: var(--dark-red);
+}
+
+.contact {
+    font-size: 24px;
 }
 
 .form-group {

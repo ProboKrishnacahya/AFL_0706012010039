@@ -21,10 +21,6 @@
                             <input type="number" class="form-control" name="nomor_theater"
                                 value="{{ $theater->nomor_theater }}" required>
                         </div>
-                        {{-- <div class="form-group">
-                        <label>Tipe</label>
-                        <input type="text" class="form-control" name="tipe" value="{{ $theater->tipe }}" required>
-                    </div> --}}
                         <div class="form-group d-grid">
                             <label>Tipe</label>
                             <select name="tipe" class="custom-select">
@@ -41,12 +37,10 @@
                                 required>
                         </div>
                         @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
+                            <div class="alert alert-danger mt-5 pt-3 justify-content-between">
+                                @foreach ($errors->all() as $error)<i
+                                        class="bi bi-exclamation-circle"></i>&emsp;{{ $error }}
+                                @endforeach
                             </div>
                         @endif
                         <div class="mt-5">

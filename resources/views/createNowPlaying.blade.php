@@ -65,15 +65,6 @@
                         <label>Poster</label>
                         <input type="image" class="form-control" name="poster">
                     </div> --}}
-                        @if ($errors->any())
-                            <div class="alert alert-danger">
-                                <ul>
-                                    @foreach ($errors->all() as $error)
-                                        <li>{{ $error }}</li>
-                                    @endforeach
-                                </ul>
-                            </div>
-                        @endif
                         <div class="mt-5">
                             <button type="submit" class="btn btn-primary">
                                 <i class="bi bi-send"></i>&emsp;Submit
