@@ -15,7 +15,7 @@ class NowPlayingController extends Controller
      */
     public function index()
     {
-        $now_playings = NowPlaying::latest()->filter(request(['search']))->paginate(3);
+        $now_playings = NowPlaying::first()->filter(request(['search']))->paginate(3);
         $theaters = Theater::all();
 
         return view(

@@ -24,7 +24,6 @@ class CreateTableNowPlaying extends Migration
             $table->string('cast')->nullable(false);
             // $table->string('poster');
             $table->bigInteger('nomor_theater')->unsigned();
-            // $table->foreign('nomor_theater')->references('nomor_theater')->on('theater'); //?references('nama kolom dari id di Theater ')
             $table->timestamps();
         });
     }
