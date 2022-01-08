@@ -19,7 +19,7 @@
     </script>
 
     {{-- External CSS public/assets/css/style.css --}}
-    <link rel="stylesheet" href="{{ url('assets/css/style.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" type="text/css" />
 
     {{-- Google Fonts --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
